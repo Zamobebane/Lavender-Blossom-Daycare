@@ -1,12 +1,44 @@
 import streamlit as st
+import base64
 
+# Set up page
 st.set_page_config(page_title="Lavender Blossom Daycare", layout="centered")
 
-# Header
+# Function to add background
+def set_bg(image_file):
+    with open(image_file, "rb") as img_file:
+        img_bytes = img_file.read()
+        encoded = base64.b64encode(img_bytes).decode()
+        st.markdown(
+            f"""
+            <style>
+            .stApp {{
+                background-image: url("data:image/jpg;base64,{encoded}");
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+            }}
+            .info-box {{
+                background-color: rgba(255, 255, 255, 0.8);
+                padding: 20px;
+                border-radius: 12px;
+                margin-top: 20px;
+            }}
+            </style>
+            """,
+            unsafe_allow_html=True
+        )
+
+# Set the background
+set_bg("lavender-in-bloom-big-56a5831a3df78cf77288ab2b.jpg")
+
+# Content
+st.markdown("<div class='info-box'>", unsafe_allow_html=True)
+
 st.title("🌸 Lavender Blossom Daycare")
 st.subheader("A loving and safe place for your child to grow and blossom 🌼")
 
-# Location and Contact Info
 st.markdown("### 📍 Location")
 st.write("13352 SW 157th Ave, Tigard, OR 97223")
 
@@ -17,8 +49,6 @@ st.write("**Email:** [lavenderblossomdaycare@gmail.com](mailto:lavenderblossomda
 st.markdown("### 🕕 Hours of Operation")
 st.write("**Monday to Friday:** 6:00 AM – 6:00 PM")
 
-# About section
-st.markdown("---")
 st.markdown("### 👶 About Us")
 st.write("""
 At Lavender Blossom Daycare, we provide a nurturing, creative, and secure environment
@@ -28,9 +58,5 @@ and healthy meals throughout the day.
 Let your child grow with us — where every little blossom is cared for with love. 🌷
 """)
 
-# Image (optional)
-st.image("https://images.unsplash.com/photo-1609831194203-5df9db976b5c", caption="A Place to Learn and Bloom", use_column_width=True)
-
-# Footer
-st.markdown("---")
 st.markdown("© 2025 Lavender Blossom Daycare")
+st.markdown("</div>", unsafe_allow_html=True)
