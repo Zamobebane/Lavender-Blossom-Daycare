@@ -1,38 +1,36 @@
 import streamlit as st
 import base64
 
-# Set page configuration
 st.set_page_config(page_title="Lavender Blossom Daycare", layout="centered")
 
-# Load background image and encode to base64
-def set_background(image_file):
+# ---- BACKGROUND IMAGE ----
+def set_bg_from_local(image_file):
     with open(image_file, "rb") as image:
         encoded = base64.b64encode(image.read()).decode()
-    page_bg_img = f"""
-    <style>
-    body {{
-        background-image: url("data:image/png;base64,{encoded}");
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-    }}
-    .stApp {{
-        background-color: rgba(255, 255, 255, 0.8);
-        padding: 2rem;
-        border-radius: 10px;
-    }}
-    </style>
-    """
-    st.markdown(page_bg_img, unsafe_allow_html=True)
+        page_bg = f"""
+        <style>
+        .stApp {{
+            background-image: url("data:image/png;base64,{encoded}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }}
+        .block-container {{
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 2rem;
+            border-radius: 1rem;
+        }}
+        </style>
+        """
+        st.markdown(page_bg, unsafe_allow_html=True)
 
-# Call the function to set background
-set_background("background.png")  # Rename your image to 'background.png'
+# Call the function with your file
+set_bg_from_local("ChatGPT Image May 12, 2025, 02_00_46 PM.png")
 
-# App content
+# ---- CONTENT ----
 st.title("🌸 Lavender Blossom Daycare")
 st.subheader("A loving and safe place for your child to grow and blossom 🌼")
 
-# Contact info
 st.markdown("### 📍 Location")
 st.write("13352 SW 157th Ave, Tigard, OR 97223")
 
@@ -43,7 +41,6 @@ st.write("**Email:** [lavenderblossomdaycare@gmail.com](mailto:lavenderblossomda
 st.markdown("### 🕕 Hours of Operation")
 st.write("**Monday to Friday:** 6:00 AM – 6:00 PM")
 
-# About section
 st.markdown("---")
 st.markdown("### 👶 About Us")
 st.write("""
@@ -54,6 +51,5 @@ and healthy meals throughout the day.
 Let your child grow with us — where every little blossom is cared for with love. 🌷
 """)
 
-# Footer
 st.markdown("---")
 st.markdown("© 2025 Lavender Blossom Daycare")
