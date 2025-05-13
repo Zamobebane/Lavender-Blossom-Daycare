@@ -13,7 +13,6 @@ def set_bg_from_local(image_file):
 
         html, body, [class*="css"] {{
             font-family: 'Quicksand', sans-serif;
-            scroll-behavior: smooth;
         }}
 
         .stApp {{
