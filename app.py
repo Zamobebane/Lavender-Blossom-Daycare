@@ -16,16 +16,14 @@ def set_bg_from_local(image_file):
             background-repeat: no-repeat;
         }}
         .block-container {{
-            background-color: rgba(255, 255, 255, 0.95);  /* More solid for better readability */
+            background-color: rgba(255, 255, 255, 0.65);
             color: #111 !important;
-            padding: 2.5rem;
-            border-radius: 1.5rem;
-            max-width: 800px;
-            margin: auto;
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.25);
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
         }}
         h1, h2, h3, h4, h5, h6, p, a, span {{
-            color: #222 !important;
+            color: #111 !important;
         }}
         </style>
         """
@@ -35,8 +33,8 @@ def set_bg_from_local(image_file):
 set_bg_from_local("ChatGPT Image May 12, 2025, 02_00_46 PM.png")
 
 # ---- PAGE CONTENT ----
-st.title("💜 Lavender Blossom Daycare 💜")
-st.markdown("### 🌿 A loving and safe place for your child to grow and blossom 💜")
+st.title("Lavender Blossom Daycare")
+st.subheader("A loving and safe place for your child to grow and blossom 💜🌿")
 
 st.markdown("### 📍 Location")
 st.write("13352 SW 157th Ave, Tigard, OR 97223")
@@ -49,7 +47,7 @@ st.markdown("### 🕕 Hours of Operation")
 st.write("**Monday to Friday:** 6:00 AM – 6:00 PM")
 
 st.markdown("---")
-st.markdown("### 💜 About Us")
+st.markdown("### 💜 About Us 🌿")
 st.write("""
 At Lavender Blossom Daycare, we provide a nurturing, creative, and secure environment
 where children thrive. Our certified caregivers offer structured learning, fun activities,
@@ -59,4 +57,4 @@ Let your child grow with us — where every little blossom is cared for with lov
 """)
 
 st.markdown("---")
-st.markdown("© 2025 Lavender Blossom Daycare 💜")
+st.markdown("© 2025 Lavender Blossom Daycare")
