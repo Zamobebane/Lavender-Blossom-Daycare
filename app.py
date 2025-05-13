@@ -26,7 +26,7 @@ def set_bg_from_local(image_file):
         }}
 
         .block-container {{
-            animation: fadeIn 1.3s ease-in;
+            animation: fadeIn 1.2s ease-in;
             padding: 2.5rem 3rem;
             background: rgba(255, 255, 255, 0.35);
             backdrop-filter: blur(10px);
@@ -34,36 +34,36 @@ def set_bg_from_local(image_file):
             border-radius: 1.5rem;
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
             color: #111;
-            max-width: 820px;
+            max-width: 850px;
             margin: 2rem auto;
         }}
 
-        h1 {{
-            color: #8e44ad !important;
-            font-size: 3rem;
+        .hero {{
             text-align: center;
-            margin-bottom: 0.4em;
+            margin-bottom: 2rem;
         }}
 
-        h2, h3 {{
-            color: #333 !important;
+        .hero h1 {{
+            color: #8e44ad;
+            font-size: 3.5rem;
+            margin-bottom: 0.2rem;
+        }}
+
+        .hero h3 {{
+            color: #333;
+            font-weight: 400;
+            font-size: 1.3rem;
+        }}
+
+        .badge {{
+            display: inline-block;
+            background-color: #8e44ad;
+            color: white;
+            padding: 0.4rem 1rem;
+            border-radius: 999px;
+            font-size: 1rem;
             margin-top: 2rem;
-            font-size: 1.5rem;
-        }}
-
-        a {{
-            color: #8e44ad !important;
-            text-decoration: none;
-        }}
-
-        a:hover {{
-            text-decoration: underline;
-        }}
-
-        hr {{
-            border: none;
-            border-top: 1px solid rgba(0, 0, 0, 0.1);
-            margin: 2rem 0;
+            margin-bottom: 1rem;
         }}
 
         .contact-grid {{
@@ -82,12 +82,33 @@ def set_bg_from_local(image_file):
             padding: 1rem;
             box-shadow: 0 4px 16px rgba(0,0,0,0.1);
             text-align: center;
+            transition: transform 0.2s ease;
+        }}
+
+        .card:hover {{
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
         }}
 
         .card-icon {{
             font-size: 2rem;
             margin-bottom: 0.5rem;
             color: #8e44ad;
+        }}
+
+        a {{
+            color: #8e44ad;
+            text-decoration: none;
+        }}
+
+        a:hover {{
+            text-decoration: underline;
+        }}
+
+        hr {{
+            border: none;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            margin: 2rem 0;
         }}
 
         .footer {{
@@ -108,12 +129,17 @@ def set_bg_from_local(image_file):
 # ---- SET BACKGROUND ----
 set_bg_from_local("ChatGPT Image May 12, 2025, 02_00_46 PM.png")
 
-# ---- PAGE CONTENT ----
-st.title("Lavender Blossom Daycare")
-st.subheader("A loving and safe place for your child to grow and blossom 💜🌿")
+# ---- HERO HEADER ----
+st.markdown("""
+<div class="hero">
+    <h1>Lavender Blossom Daycare</h1>
+    <h3>A loving and safe place for your child to grow and blossom 💜🌿</h3>
+</div>
+""", unsafe_allow_html=True)
 
-# ---- CONTACT GRID ----
-st.markdown("### 📬 Contact & Location")
+# ---- LOCATION / CONTACT ----
+st.markdown('<div class="badge">📬 Contact & Location</div>', unsafe_allow_html=True)
+
 st.markdown("""
 <div class="contact-grid">
   <div class="card">
@@ -135,13 +161,11 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ---- HOURS ----
-st.markdown("### 🕕 Hours of Operation")
+st.markdown('<div class="badge">🕕 Hours of Operation</div>', unsafe_allow_html=True)
 st.write("**Monday to Friday:** 6:00 AM – 6:00 PM")
 
-st.markdown("<hr />", unsafe_allow_html=True)
-
-# ---- ABOUT SECTION ----
-st.markdown("### 💜 About Us 🌿")
+# ---- ABOUT ----
+st.markdown('<div class="badge">💜 About Us 🌿</div>', unsafe_allow_html=True)
 st.write("""
 At Lavender Blossom Daycare, we provide a nurturing, creative, and secure environment
 where children thrive. Our certified caregivers offer structured learning, fun activities,
@@ -150,7 +174,6 @@ and healthy meals throughout the day.
 Let your child grow with us — where every little blossom is cared for with love. 💜🌿
 """)
 
-st.markdown("<hr />", unsafe_allow_html=True)
-
 # ---- FOOTER ----
+st.markdown("<hr />", unsafe_allow_html=True)
 st.markdown('<div class="footer">© 2025 Lavender Blossom Daycare</div>', unsafe_allow_html=True)
