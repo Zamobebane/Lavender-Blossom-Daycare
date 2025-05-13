@@ -25,7 +25,6 @@ def set_bg_from_local(image_file):
         }}
 
         .block-container {{
-            animation: fadeIn 1.3s ease-in;
             padding: 2.5rem 3rem;
             background: rgba(255, 255, 255, 0.35);
             backdrop-filter: blur(10px);
@@ -40,7 +39,6 @@ def set_bg_from_local(image_file):
         .hero {{
             text-align: center;
             margin-bottom: 2rem;
-            animation: slideIn 1s ease;
         }}
 
         .hero h1 {{
@@ -64,7 +62,6 @@ def set_bg_from_local(image_file):
             font-size: 1rem;
             margin-top: 2.5rem;
             margin-bottom: 1.2rem;
-            animation: fadeInUp 1.3s ease;
         }}
 
         .contact-grid {{
@@ -117,22 +114,6 @@ def set_bg_from_local(image_file):
             font-size: 0.9rem;
             margin-top: 2.5rem;
             color: #555;
-        }}
-
-        /* Animations */
-        @keyframes fadeIn {{
-            from {{ opacity: 0; transform: translateY(20px); }}
-            to {{ opacity: 1; transform: translateY(0); }}
-        }}
-
-        @keyframes fadeInUp {{
-            from {{ opacity: 0; transform: translateY(30px); }}
-            to {{ opacity: 1; transform: translateY(0); }}
-        }}
-
-        @keyframes slideIn {{
-            from {{ opacity: 0; transform: translateY(-30px); }}
-            to {{ opacity: 1; transform: translateY(0); }}
         }}
         </style>
         """
