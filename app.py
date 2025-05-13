@@ -17,26 +17,24 @@ def set_bg_from_local(image_file):
         }}
 
         .stApp {{
-            background-image:
+            background-image: 
                 linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
                 url("data:image/png;base64,{encoded}");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            position: relative;
         }}
 
-        .stApp::after {{
-            content: "";
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: url('https://www.transparenttextures.com/patterns/flowers.png');
-            opacity: 0.05;
-            z-index: 0;
+        .glow-container {{
+            padding: 3px;
+            background: linear-gradient(45deg, #e1bee7, #d1c4e9, #f3e5f5, #ce93d8, #8e44ad);
+            background-size: 400% 400%;
+            animation: glowMove 10s ease infinite;
+            border-radius: 1.7rem;
         }}
 
         .block-container {{
-            animation: fadeIn 1.2s ease-in;
+            animation: fadeIn 1.3s ease-in;
             padding: 2.5rem 3rem;
             background: rgba(255, 255, 255, 0.35);
             backdrop-filter: blur(10px);
@@ -45,9 +43,7 @@ def set_bg_from_local(image_file):
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
             color: #111;
             max-width: 850px;
-            margin: 4.5rem auto 2rem;
-            position: relative;
-            z-index: 1;
+            margin: 4rem auto 2rem;
         }}
 
         .navbar {{
@@ -55,7 +51,7 @@ def set_bg_from_local(image_file):
             top: 0;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(255,255,255,0.95);
+            background: rgba(255,255,255,0.9);
             padding: 0.5rem 2rem;
             border-radius: 999px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -92,22 +88,15 @@ def set_bg_from_local(image_file):
         }}
 
         .badge {{
-            display: inline-flex;
-            align-items: center;
+            display: inline-block;
             background-color: #8e44ad;
             color: white;
-            padding: 0.5rem 1.2rem;
+            padding: 0.4rem 1rem;
             border-radius: 999px;
             font-size: 1rem;
             margin-top: 2.5rem;
             margin-bottom: 1.2rem;
             animation: fadeInUp 1.3s ease;
-        }}
-
-        .badge::before {{
-            content: "🌸";
-            margin-right: 0.6rem;
-            font-size: 1.2rem;
         }}
 
         .contact-grid {{
@@ -121,7 +110,7 @@ def set_bg_from_local(image_file):
 
         .card {{
             flex: 1 1 200px;
-            background: rgba(255,255,255,0.8);
+            background: rgba(255,255,255,0.75);
             border-radius: 1rem;
             padding: 1rem;
             box-shadow: 0 4px 16px rgba(0,0,0,0.1);
@@ -162,6 +151,12 @@ def set_bg_from_local(image_file):
             color: #555;
         }}
 
+        @keyframes glowMove {{
+            0% {{ background-position: 0% 50%; }}
+            50% {{ background-position: 100% 50%; }}
+            100% {{ background-position: 0% 50%; }}
+        }}
+
         @keyframes fadeIn {{
             from {{ opacity: 0; transform: translateY(20px); }}
             to {{ opacity: 1; transform: translateY(0); }}
@@ -177,6 +172,7 @@ def set_bg_from_local(image_file):
             to {{ opacity: 1; transform: translateY(0); }}
         }}
         </style>
+
         <div class="navbar">
             <a href="#hero">Home</a>
             <a href="#contact">Contact</a>
@@ -186,11 +182,14 @@ def set_bg_from_local(image_file):
         """
         st.markdown(page_bg, unsafe_allow_html=True)
 
-# ---- BACKGROUND IMAGE ----
+# ---- SET BACKGROUND ----
 set_bg_from_local("ChatGPT Image May 12, 2025, 02_00_46 PM.png")
 
-# ---- HERO SECTION ----
+# ---- MAIN CONTENT ----
 st.markdown('<div id="hero"></div>', unsafe_allow_html=True)
+st.markdown('<div class="glow-container"><div class="block-container">', unsafe_allow_html=True)
+
+# ---- HERO ----
 st.markdown("""
 <div class="hero">
     <h1>Lavender Blossom Daycare</h1>
@@ -200,7 +199,7 @@ st.markdown("""
 
 # ---- CONTACT SECTION ----
 st.markdown('<div id="contact"></div>', unsafe_allow_html=True)
-st.markdown('<div class="badge">Contact & Location</div>', unsafe_allow_html=True)
+st.markdown('<div class="badge">📬 Contact & Location</div>', unsafe_allow_html=True)
 st.markdown("""
 <div class="contact-grid">
   <div class="card">
@@ -221,14 +220,14 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# ---- HOURS SECTION ----
+# ---- HOURS ----
 st.markdown('<div id="hours"></div>', unsafe_allow_html=True)
-st.markdown('<div class="badge">Hours of Operation</div>', unsafe_allow_html=True)
+st.markdown('<div class="badge">🕕 Hours of Operation</div>', unsafe_allow_html=True)
 st.write("**Monday to Friday:** 6:00 AM – 6:00 PM")
 
-# ---- ABOUT SECTION ----
+# ---- ABOUT ----
 st.markdown('<div id="about"></div>', unsafe_allow_html=True)
-st.markdown('<div class="badge">About Us</div>', unsafe_allow_html=True)
+st.markdown('<div class="badge">💜 About Us 🌿</div>', unsafe_allow_html=True)
 st.write("""
 At Lavender Blossom Daycare, we provide a nurturing, creative, and secure environment
 where children thrive. Our certified caregivers offer structured learning, fun activities,
@@ -237,6 +236,6 @@ and healthy meals throughout the day.
 Let your child grow with us — where every little blossom is cared for with love. 💜🌿
 """)
 
-# ---- FOOTER ----
 st.markdown("<hr />", unsafe_allow_html=True)
 st.markdown('<div class="footer">© 2025 Lavender Blossom Daycare</div>', unsafe_allow_html=True)
+st.markdown('</div></div>', unsafe_allow_html=True)  # Close glow + block container
