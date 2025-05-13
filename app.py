@@ -17,7 +17,7 @@ def set_bg_from_local(image_file):
 
         .stApp {{
             background-image: 
-                linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)),
+                linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
                 url("data:image/png;base64,{encoded}");
             background-size: cover;
             background-position: center;
@@ -25,27 +25,42 @@ def set_bg_from_local(image_file):
         }}
 
         .block-container {{
-            padding: 2rem 3rem;
-            background-color: rgba(255, 255, 255, 0.65);
-            color: #111;
+            padding: 2.5rem 3rem;
+            background: rgba(255, 255, 255, 0.35);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             border-radius: 1.5rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            max-width: 800px;
-            margin: auto;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            color: #111;
+            max-width: 820px;
+            margin: 2rem auto;
         }}
 
         h1 {{
-            color: #8e44ad !important;  /* Lavender title */
-            font-size: 3em;
-            margin-bottom: 0.3em;
+            color: #8e44ad !important;
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 0.5em;
         }}
 
         h2, h3 {{
-            color: #444 !important;
+            color: #333 !important;
         }}
 
         a {{
             color: #8e44ad !important;
+            text-decoration: none;
+        }}
+
+        a:hover {{
+            text-decoration: underline;
+        }}
+
+        .footer {{
+            text-align: center;
+            font-size: 0.9rem;
+            margin-top: 2rem;
+            color: #555;
         }}
         </style>
         """
@@ -62,8 +77,8 @@ st.markdown("### 📍 Location")
 st.write("13352 SW 157th Ave, Tigard, OR 97223")
 
 st.markdown("### 📞 Contact Us")
-st.write("**Phone:** 564-654-1493")
-st.write("**Email:** [lavenderblossomdaycare@gmail.com](mailto:lavenderblossomdaycare@gmail.com)")
+st.markdown("**Phone:** [564-654-1493](tel:5646541493)")
+st.markdown("**Email:** [lavenderblossomdaycare@gmail.com](mailto:lavenderblossomdaycare@gmail.com)")
 
 st.markdown("### 🕕 Hours of Operation")
 st.write("**Monday to Friday:** 6:00 AM – 6:00 PM")
@@ -79,4 +94,4 @@ Let your child grow with us — where every little blossom is cared for with lov
 """)
 
 st.markdown("---")
-st.markdown("© 2025 Lavender Blossom Daycare")
+st.markdown('<div class="footer">© 2025 Lavender Blossom Daycare</div>', unsafe_allow_html=True)
