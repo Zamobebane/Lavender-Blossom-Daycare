@@ -33,8 +33,8 @@ def set_bg_from_local(image_file):
 set_bg_from_local("ChatGPT Image May 12, 2025, 02_00_46 PM.png")
 
 # ---- PAGE CONTENT ----
-st.title("🌸 Lavender Blossom Daycare")
-st.subheader("A loving and safe place for your child to grow and blossom 🌼")
+st.title("💜 Lavender Blossom Daycare 🌿")
+st.subheader("A loving and safe place for your child to grow and blossom 💜🌿")
 
 st.markdown("### 📍 Location")
 st.write("13352 SW 157th Ave, Tigard, OR 97223")
@@ -47,13 +47,13 @@ st.markdown("### 🕕 Hours of Operation")
 st.write("**Monday to Friday:** 6:00 AM – 6:00 PM")
 
 st.markdown("---")
-st.markdown("### 👶 About Us")
+st.markdown("### 💜 About Us 🌿")
 st.write("""
 At Lavender Blossom Daycare, we provide a nurturing, creative, and secure environment
 where children thrive. Our certified caregivers offer structured learning, fun activities,
 and healthy meals throughout the day.
 
-Let your child grow with us — where every little blossom is cared for with love. 🌷
+Let your child grow with us — where every little blossom is cared for with love. 💜🌿
 """)
 
 st.markdown("---")
