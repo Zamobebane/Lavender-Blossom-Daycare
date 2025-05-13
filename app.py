@@ -66,6 +66,30 @@ def set_bg_from_local(image_file):
             margin: 2rem 0;
         }}
 
+        .contact-grid {{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 1.5rem;
+            margin-top: 1rem;
+            margin-bottom: 2rem;
+        }}
+
+        .card {{
+            flex: 1 1 200px;
+            background: rgba(255,255,255,0.75);
+            border-radius: 1rem;
+            padding: 1rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+            text-align: center;
+        }}
+
+        .card-icon {{
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: #8e44ad;
+        }}
+
         .footer {{
             text-align: center;
             font-size: 0.9rem;
@@ -88,18 +112,35 @@ set_bg_from_local("ChatGPT Image May 12, 2025, 02_00_46 PM.png")
 st.title("Lavender Blossom Daycare")
 st.subheader("A loving and safe place for your child to grow and blossom 💜🌿")
 
-st.markdown("### 📍 Location")
-st.write("13352 SW 157th Ave, Tigard, OR 97223")
+# ---- CONTACT GRID ----
+st.markdown("### 📬 Contact & Location")
+st.markdown("""
+<div class="contact-grid">
+  <div class="card">
+    <div class="card-icon">📍</div>
+    <strong>Location</strong><br>
+    13352 SW 157th Ave<br>Tigard, OR 97223
+  </div>
+  <div class="card">
+    <div class="card-icon">📞</div>
+    <strong>Phone</strong><br>
+    <a href="tel:5646541493">564-654-1493</a>
+  </div>
+  <div class="card">
+    <div class="card-icon">📧</div>
+    <strong>Email</strong><br>
+    <a href="mailto:lavenderblossomdaycare@gmail.com">lavenderblossomdaycare@gmail.com</a>
+  </div>
+</div>
+""", unsafe_allow_html=True)
 
-st.markdown("### 📞 Contact Us")
-st.markdown("**Phone:** [564-654-1493](tel:5646541493)")
-st.markdown("**Email:** [lavenderblossomdaycare@gmail.com](mailto:lavenderblossomdaycare@gmail.com)")
-
+# ---- HOURS ----
 st.markdown("### 🕕 Hours of Operation")
 st.write("**Monday to Friday:** 6:00 AM – 6:00 PM")
 
 st.markdown("<hr />", unsafe_allow_html=True)
 
+# ---- ABOUT SECTION ----
 st.markdown("### 💜 About Us 🌿")
 st.write("""
 At Lavender Blossom Daycare, we provide a nurturing, creative, and secure environment
@@ -111,4 +152,5 @@ Let your child grow with us — where every little blossom is cared for with lov
 
 st.markdown("<hr />", unsafe_allow_html=True)
 
+# ---- FOOTER ----
 st.markdown('<div class="footer">© 2025 Lavender Blossom Daycare</div>', unsafe_allow_html=True)
