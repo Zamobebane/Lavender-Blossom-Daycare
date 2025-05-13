@@ -13,6 +13,7 @@ def set_bg_from_local(image_file):
 
         html, body, [class*="css"] {{
             font-family: 'Quicksand', sans-serif;
+            scroll-behavior: smooth;
         }}
 
         .stApp {{
@@ -25,6 +26,7 @@ def set_bg_from_local(image_file):
         }}
 
         .block-container {{
+            animation: fadeIn 1.3s ease-in;
             padding: 2.5rem 3rem;
             background: rgba(255, 255, 255, 0.35);
             backdrop-filter: blur(10px);
@@ -40,11 +42,13 @@ def set_bg_from_local(image_file):
             color: #8e44ad !important;
             font-size: 3rem;
             text-align: center;
-            margin-bottom: 0.5em;
+            margin-bottom: 0.4em;
         }}
 
         h2, h3 {{
             color: #333 !important;
+            margin-top: 2rem;
+            font-size: 1.5rem;
         }}
 
         a {{
@@ -56,11 +60,22 @@ def set_bg_from_local(image_file):
             text-decoration: underline;
         }}
 
+        hr {{
+            border: none;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            margin: 2rem 0;
+        }}
+
         .footer {{
             text-align: center;
             font-size: 0.9rem;
             margin-top: 2rem;
             color: #555;
+        }}
+
+        @keyframes fadeIn {{
+            from {{ opacity: 0; transform: translateY(20px); }}
+            to {{ opacity: 1; transform: translateY(0); }}
         }}
         </style>
         """
@@ -83,7 +98,8 @@ st.markdown("**Email:** [lavenderblossomdaycare@gmail.com](mailto:lavenderblosso
 st.markdown("### 🕕 Hours of Operation")
 st.write("**Monday to Friday:** 6:00 AM – 6:00 PM")
 
-st.markdown("---")
+st.markdown("<hr />", unsafe_allow_html=True)
+
 st.markdown("### 💜 About Us 🌿")
 st.write("""
 At Lavender Blossom Daycare, we provide a nurturing, creative, and secure environment
@@ -93,5 +109,6 @@ and healthy meals throughout the day.
 Let your child grow with us — where every little blossom is cared for with love. 💜🌿
 """)
 
-st.markdown("---")
+st.markdown("<hr />", unsafe_allow_html=True)
+
 st.markdown('<div class="footer">© 2025 Lavender Blossom Daycare</div>', unsafe_allow_html=True)
