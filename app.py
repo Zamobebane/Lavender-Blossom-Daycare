@@ -22,7 +22,12 @@ def set_bg_from_local(image_file):
             border-radius: 1rem;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
         }}
-        h1, h2, h3, h4, h5, h6, p, a, span {{
+        h1 {{
+            color: #8e44ad !important;  /* Lavender Purple */
+            font-size: 3em;
+            font-weight: bold;
+        }}
+        h2, h3, h4, h5, h6, p, a, span {{
             color: #111 !important;
         }}
         </style>
