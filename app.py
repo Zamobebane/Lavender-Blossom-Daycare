@@ -3,7 +3,7 @@ import base64
 
 st.set_page_config(page_title="Lavender Blossom Daycare", layout="centered")
 
-# ---- BACKGROUND IMAGE ----
+# ---- BACKGROUND IMAGE FUNCTION ----
 def set_bg_from_local(image_file):
     with open(image_file, "rb") as image:
         encoded = base64.b64encode(image.read()).decode()
@@ -16,18 +16,23 @@ def set_bg_from_local(image_file):
             background-repeat: no-repeat;
         }}
         .block-container {{
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: rgba(255, 255, 255, 0.85);
+            color: #111 !important;
             padding: 2rem;
             border-radius: 1rem;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }}
+        h1, h2, h3, h4, h5, h6, p, a, span {{
+            color: #111 !important;
         }}
         </style>
         """
         st.markdown(page_bg, unsafe_allow_html=True)
 
-# Call the function with your file
+# ---- SET BACKGROUND ----
 set_bg_from_local("ChatGPT Image May 12, 2025, 02_00_46 PM.png")
 
-# ---- CONTENT ----
+# ---- PAGE CONTENT ----
 st.title("🌸 Lavender Blossom Daycare")
 st.subheader("A loving and safe place for your child to grow and blossom 🌼")
 
