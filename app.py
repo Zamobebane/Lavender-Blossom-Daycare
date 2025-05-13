@@ -80,6 +80,12 @@ def set_bg_from_local(image_file):
             padding: 1rem;
             box-shadow: 0 4px 16px rgba(0,0,0,0.1);
             text-align: center;
+            transition: all 0.3s ease;
+        }}
+
+        .card:hover {{
+            transform: translateY(-8px);
+            box-shadow: 0 0 20px rgba(142, 68, 173, 0.4);
         }}
 
         .card-icon {{
