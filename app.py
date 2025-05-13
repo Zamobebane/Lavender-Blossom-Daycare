@@ -17,16 +17,26 @@ def set_bg_from_local(image_file):
         }}
 
         .stApp {{
-            background-image: 
+            background-image:
                 linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
                 url("data:image/png;base64,{encoded}");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            position: relative;
+        }}
+
+        .stApp::after {{
+            content: "";
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: url('https://www.transparenttextures.com/patterns/flowers.png');
+            opacity: 0.05;
+            z-index: 0;
         }}
 
         .block-container {{
-            animation: fadeIn 1.3s ease-in;
+            animation: fadeIn 1.2s ease-in;
             padding: 2.5rem 3rem;
             background: rgba(255, 255, 255, 0.35);
             backdrop-filter: blur(10px);
@@ -35,16 +45,17 @@ def set_bg_from_local(image_file):
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
             color: #111;
             max-width: 850px;
-            margin: 3.5rem auto 2rem;
+            margin: 4.5rem auto 2rem;
+            position: relative;
+            z-index: 1;
         }}
 
-        /* NAVIGATION */
         .navbar {{
             position: fixed;
             top: 0;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(255,255,255,0.9);
+            background: rgba(255,255,255,0.95);
             padding: 0.5rem 2rem;
             border-radius: 999px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -81,15 +92,22 @@ def set_bg_from_local(image_file):
         }}
 
         .badge {{
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
             background-color: #8e44ad;
             color: white;
-            padding: 0.4rem 1rem;
+            padding: 0.5rem 1.2rem;
             border-radius: 999px;
             font-size: 1rem;
             margin-top: 2.5rem;
             margin-bottom: 1.2rem;
             animation: fadeInUp 1.3s ease;
+        }}
+
+        .badge::before {{
+            content: "🌸";
+            margin-right: 0.6rem;
+            font-size: 1.2rem;
         }}
 
         .contact-grid {{
@@ -103,7 +121,7 @@ def set_bg_from_local(image_file):
 
         .card {{
             flex: 1 1 200px;
-            background: rgba(255,255,255,0.75);
+            background: rgba(255,255,255,0.8);
             border-radius: 1rem;
             padding: 1rem;
             box-shadow: 0 4px 16px rgba(0,0,0,0.1);
@@ -144,7 +162,6 @@ def set_bg_from_local(image_file):
             color: #555;
         }}
 
-        /* Animations */
         @keyframes fadeIn {{
             from {{ opacity: 0; transform: translateY(20px); }}
             to {{ opacity: 1; transform: translateY(0); }}
@@ -169,7 +186,7 @@ def set_bg_from_local(image_file):
         """
         st.markdown(page_bg, unsafe_allow_html=True)
 
-# ---- SET BACKGROUND ----
+# ---- BACKGROUND IMAGE ----
 set_bg_from_local("ChatGPT Image May 12, 2025, 02_00_46 PM.png")
 
 # ---- HERO SECTION ----
@@ -181,9 +198,9 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# ---- CONTACT & LOCATION ----
+# ---- CONTACT SECTION ----
 st.markdown('<div id="contact"></div>', unsafe_allow_html=True)
-st.markdown('<div class="badge">📬 Contact & Location</div>', unsafe_allow_html=True)
+st.markdown('<div class="badge">Contact & Location</div>', unsafe_allow_html=True)
 st.markdown("""
 <div class="contact-grid">
   <div class="card">
@@ -204,14 +221,14 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# ---- HOURS ----
+# ---- HOURS SECTION ----
 st.markdown('<div id="hours"></div>', unsafe_allow_html=True)
-st.markdown('<div class="badge">🕕 Hours of Operation</div>', unsafe_allow_html=True)
+st.markdown('<div class="badge">Hours of Operation</div>', unsafe_allow_html=True)
 st.write("**Monday to Friday:** 6:00 AM – 6:00 PM")
 
-# ---- ABOUT ----
+# ---- ABOUT SECTION ----
 st.markdown('<div id="about"></div>', unsafe_allow_html=True)
-st.markdown('<div class="badge">💜 About Us 🌿</div>', unsafe_allow_html=True)
+st.markdown('<div class="badge">About Us</div>', unsafe_allow_html=True)
 st.write("""
 At Lavender Blossom Daycare, we provide a nurturing, creative, and secure environment
 where children thrive. Our certified caregivers offer structured learning, fun activities,
