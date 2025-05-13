@@ -9,26 +9,43 @@ def set_bg_from_local(image_file):
         encoded = base64.b64encode(image.read()).decode()
         page_bg = f"""
         <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+
+        html, body, [class*="css"] {{
+            font-family: 'Quicksand', sans-serif;
+        }}
+
         .stApp {{
-            background-image: url("data:image/png;base64,{encoded}");
+            background-image: 
+                linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)),
+                url("data:image/png;base64,{encoded}");
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
         }}
+
         .block-container {{
+            padding: 2rem 3rem;
             background-color: rgba(255, 255, 255, 0.65);
-            color: #111 !important;
-            padding: 2rem;
-            border-radius: 1rem;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            color: #111;
+            border-radius: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: auto;
         }}
+
         h1 {{
-            color: #8e44ad !important;  /* Lavender Purple */
+            color: #8e44ad !important;  /* Lavender title */
             font-size: 3em;
-            font-weight: bold;
+            margin-bottom: 0.3em;
         }}
-        h2, h3, h4, h5, h6, p, a, span {{
-            color: #111 !important;
+
+        h2, h3 {{
+            color: #444 !important;
+        }}
+
+        a {{
+            color: #8e44ad !important;
         }}
         </style>
         """
