@@ -35,7 +35,31 @@ def set_bg_from_local(image_file):
             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
             color: #111;
             max-width: 850px;
-            margin: 2rem auto;
+            margin: 3.5rem auto 2rem;
+        }}
+
+        /* NAVIGATION */
+        .navbar {{
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255,255,255,0.9);
+            padding: 0.5rem 2rem;
+            border-radius: 999px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            z-index: 999;
+        }}
+
+        .navbar a {{
+            margin: 0 1rem;
+            color: #8e44ad;
+            font-weight: 600;
+            text-decoration: none;
+        }}
+
+        .navbar a:hover {{
+            text-decoration: underline;
         }}
 
         .hero {{
@@ -136,13 +160,20 @@ def set_bg_from_local(image_file):
             to {{ opacity: 1; transform: translateY(0); }}
         }}
         </style>
+        <div class="navbar">
+            <a href="#hero">Home</a>
+            <a href="#contact">Contact</a>
+            <a href="#hours">Hours</a>
+            <a href="#about">About</a>
+        </div>
         """
         st.markdown(page_bg, unsafe_allow_html=True)
 
 # ---- SET BACKGROUND ----
 set_bg_from_local("ChatGPT Image May 12, 2025, 02_00_46 PM.png")
 
-# ---- HERO HEADER ----
+# ---- HERO SECTION ----
+st.markdown('<div id="hero"></div>', unsafe_allow_html=True)
 st.markdown("""
 <div class="hero">
     <h1>Lavender Blossom Daycare</h1>
@@ -151,8 +182,8 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ---- CONTACT & LOCATION ----
+st.markdown('<div id="contact"></div>', unsafe_allow_html=True)
 st.markdown('<div class="badge">📬 Contact & Location</div>', unsafe_allow_html=True)
-
 st.markdown("""
 <div class="contact-grid">
   <div class="card">
@@ -174,10 +205,12 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ---- HOURS ----
+st.markdown('<div id="hours"></div>', unsafe_allow_html=True)
 st.markdown('<div class="badge">🕕 Hours of Operation</div>', unsafe_allow_html=True)
 st.write("**Monday to Friday:** 6:00 AM – 6:00 PM")
 
-# ---- ABOUT SECTION ----
+# ---- ABOUT ----
+st.markdown('<div id="about"></div>', unsafe_allow_html=True)
 st.markdown('<div class="badge">💜 About Us 🌿</div>', unsafe_allow_html=True)
 st.write("""
 At Lavender Blossom Daycare, we provide a nurturing, creative, and secure environment
